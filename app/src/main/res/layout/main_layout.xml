@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:ignore="MissingClass">
+
+    <!-- 카메라 미리보기 -->
+    <androidx.camera.view.PreviewView
+        android:id="@+id/previewView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <!-- 얼굴 오버레이 (바운딩 박스, 고유 ID, 랜드마크) -->
+    <com.project.googlespeechtotext.FaceOverlayView
+        android:id="@+id/faceOverlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true" />
+
+    <!-- 음성 감지 결과 -->
+    <TextView
+        android:id="@+id/result_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="음성 감지X"
+        android:textSize="20sp"
+        android:textColor="#FFFFFF"
+        android:background="#80000000"
+        android:padding="8dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp" />
+
+    <!-- 감지된 얼굴 수 표시 -->
+    <TextView
+        android:id="@+id/faceCountText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="감지된 얼굴 수: 0"
+        android:textSize="20sp"
+        android:textColor="#FFFFFF"
+        android:background="#80000000"
+        android:padding="8dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="70dp" />
+
+    <!-- 시작 버튼 -->
+    <Button
+        android:id="@+id/start_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="start"
+        android:layout_toEndOf="@id/result_text_view"
+        android:layout_alignBottom="@id/result_text_view"
+        android:layout_marginStart="16dp" />
+
+    <!-- 정지 버튼 -->
+    <Button
+        android:id="@+id/stopBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="stop"
+        android:layout_toEndOf="@id/start_button"
+        android:layout_alignBottom="@id/start_button"
+        android:layout_marginStart="16dp" />
+
+</RelativeLayout>
